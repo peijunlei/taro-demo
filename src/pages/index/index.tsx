@@ -9,15 +9,15 @@ export default function Index () {
 
   const handleShowToast = () => {
     Toast.showToast({ 
-      title: '支付成功',
+      title: '支付成功支付成功支付成功支付成功支付成功支付成功支付成功支付成功支付成功支付成功支付成功支付成功',
       onClose: () => {
         console.log('关闭')
       }
     })
 
-    setTimeout(() => {
-      Toast.hideToast()
-    }, 1000)
+    // setTimeout(() => {
+    //   Toast.hideToast()
+    // }, 1000)
   }
 
   return (

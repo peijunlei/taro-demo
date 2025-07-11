@@ -28,21 +28,24 @@ function Toast({ id, open, title, duration=1500, onClose, mask = false }: ToastP
       // 显示时禁止背景滚动
       disableScroll();
       
-      timer = setTimeout(() => {
-        // 开始退出动画
-        setIsExiting(true);
-        
-        // 等待动画完成后执行 onClose
-        const exitTimer = setTimeout(() => {
-          onClose?.();
-        }, 300); // 动画持续时间
-        
-        return () => {
-          if (exitTimer) {
-            clearTimeout(exitTimer);
-          }
-        };
-      }, duration);
+      // 只有当 duration 大于 0 时才设置自动关闭定时器
+      if (duration > 0) {
+        timer = setTimeout(() => {
+          // 开始退出动画
+          setIsExiting(true);
+          
+          // 等待动画完成后执行 onClose
+          const exitTimer = setTimeout(() => {
+            onClose?.();
+          }, 300); // 动画持续时间
+          
+          return () => {
+            if (exitTimer) {
+              clearTimeout(exitTimer);
+            }
+          };
+        }, duration);
+      }
     }
     
     // 清理函数：组件卸载或依赖变化时清除定时器
