@@ -1,0 +1,43 @@
+.goods-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  &__cover {
+    width: 100%;
+    height: 300px;
+    display: block;
+  }
+
+  &__content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__name {
+    font-size: 28px;
+    line-height: 1;
+    font-weight: 500;
+    //2行
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  &__subtitle {
+    font-size: 24px;
+    line-height: 1;
+    color: #999;
+    display: block;
+  }
+
+  &__price {
+    font-size: 32px;
+    line-height: 1;
+    font-weight: 500;
+    color: #f60;
+  }
+} 
