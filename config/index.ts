@@ -1,5 +1,6 @@
 import { defineConfig, type UserConfigExport } from '@tarojs/cli'
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
+import path from 'path'
 import devConfig from './dev'
 import prodConfig from './prod'
 
@@ -22,6 +23,10 @@ export default defineConfig<'webpack5'>(async (merge, { command, mode }) => {
     },
     copy: {
       patterns: [
+        {
+          from: 'src/favicon.ico',
+          to: 'dist/favicon.ico'
+        }
       ],
       options: {
       }
