@@ -32,7 +32,7 @@ class VConsoleManager {
    * 异步加载 vConsole
    * @param version vConsole 版本，默认使用最新稳定版
    */
-  private async loadVConsole(version = '3.15.1'): Promise<void> {
+  private async loadVConsole(): Promise<void> {
     if (this.isLoaded || this.isLoading) {
       return;
     }
@@ -42,7 +42,7 @@ class VConsoleManager {
     try {
       // 使用 jsDelivr CDN 加载 vConsole
       const script = document.createElement('script');
-      script.src = `https://cdn.jsdelivr.net/npm/vconsole@${version}/dist/vconsole.min.js`;
+      script.src = `https://unpkg.com/vconsole@latest/dist/vconsole.min.js`;
       script.async = true;
       
       return new Promise((resolve, reject) => {
@@ -77,7 +77,7 @@ class VConsoleManager {
     onReady?: () => void;
   }): Promise<void> {
     try {
-      await this.loadVConsole(options?.version);
+      await this.loadVConsole();
       if (window.VConsole) {
         this.vConsole = new window.VConsole();
         options?.onReady?.();
