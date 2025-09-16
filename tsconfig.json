@@ -22,7 +22,8 @@
     ],
     "paths": {
       // TS5090 leading './'
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "kit": ["./src/utils/kit.ts"]
     }
   },
   "include": ["./src", "./types", "./config"],

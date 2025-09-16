@@ -26,4 +26,15 @@ declare namespace NodeJS {
   }
 }
 
+// window.ReactNativeWebView
+declare interface ReactNativeWebView {
+  postMessage(message: string): void
+}
 
+declare global {
+  interface Window {
+    ReactNativeWebView: ReactNativeWebView
+    onRNMessage(message: string): void
+  }
+}
+export {}

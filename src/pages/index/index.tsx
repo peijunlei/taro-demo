@@ -12,6 +12,10 @@ export default function Index() {
     {
       title: '自定义Toast',
       path: '/pages/demo2/index'
+    },
+    {
+      title: '嵌入RN',
+      path: '/pages/demo3/index'
     }
   ]
   return (
