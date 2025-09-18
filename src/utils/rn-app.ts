@@ -26,6 +26,7 @@ class RNApp {
     };
 
     // RN WebView iOS & Android 通用
+    window.addEventListener('message', handler);
     document.addEventListener('message', handler); // 安卓旧版兼容
   }
 
