@@ -3,6 +3,7 @@ import Taro, { useDidShow } from '@tarojs/taro'
 import { View, Text, Button } from '@tarojs/components'
 import { useEffect, useState } from 'react'
 import RNApp from '@/utils/rn-app'
+
 export default function Index() {
   const [userInfo, setUserInfo] = useState<any>(null)
   const [isLoading, setIsLoading] = useState(false)
@@ -17,6 +18,9 @@ export default function Index() {
     console.log('in app', isInApp())
     checkLogin()
   })
+  if (!isInApp()) {
+    return <View>请在APP中打开</View>
+  }
   return (
     <View>
       <Text>嵌入RN—APP</Text>

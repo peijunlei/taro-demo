@@ -53,7 +53,7 @@ class RNApp {
     const id = this.callbackId;
     this.callbacks[id] = callback;
 
-    window.ReactNativeWebView.postMessage(
+    window.ReactNativeWebView&&window.ReactNativeWebView.postMessage(
       JSON.stringify({ type: 'checkLogin', callbackId: id })
     );
   }
