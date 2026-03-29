@@ -2,6 +2,7 @@ import { View, Button } from '@tarojs/components'
 import Taro from '@tarojs/taro'
 
 import './index.scss'
+
 export default function Index() {
 
   const demos = [
@@ -16,6 +17,10 @@ export default function Index() {
     {
       title: '嵌入RN',
       path: '/pages/demo3/index'
+    },
+    {
+      title: '运动计时',
+      path: '/pages/demo4/index'
     }
   ]
   return (
